@@ -55,7 +55,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 
-Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdcommenter' 
+"Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
+
+
 
 
 "Format on save
@@ -84,8 +87,8 @@ if (has("termguicolors"))
 set termguicolors
 endif
 
-let g:material_style = "palenight"
-colorscheme night-owl 
+"let g:material_style = "palenight"
+colorscheme deus 
 
 
 "Mapping keys
@@ -108,10 +111,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 
-"Fuzzy Finder
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-nnoremap <C-f> :Files<CR>
-nnoremap <silent> <Leader> f :Rg<CR>
 
 let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git -name .DS_Store \) -prune -o -print'
 
@@ -161,8 +166,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set list
-set background=dark "Font issue
-set t_Co=256
+"set background=dark "Font issue
+"set t_Co=256
 
 "More configurations from https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84
 set nocompatible            " disable compatibility to old-time vi
