@@ -159,10 +159,6 @@ endif
 " colors, see https://github.com/termstandard/colors and https://gist.github.com/XVilka/8346728.
 set termguicolors
 
-" Set up cursor color and shape in various mode, ref:
-" https://github.com/neovim/neovim/wiki/FAQ#how-to-change-cursor-color-in-the-terminal
-set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor20
-
 set signcolumn=yes:1
 
 " Remove certain character from file name pattern matching

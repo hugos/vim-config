@@ -105,7 +105,6 @@ keymap.set("n", "<leader>v", "printf('`[%s`]', getregtype()[0])", {
 
 -- Always use very magic mode for searching
 keymap.set("n", "/", [[/\v]])
-
 -- Search in selected region
 -- xnoremap / :<C-U>call feedkeys('/\%>'.(line("'<")-1).'l\%<'.(line("'>")+1)."l")<CR>
 
@@ -115,7 +114,6 @@ keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change
 
 -- Use Esc to quit builtin terminal
 keymap.set("t", "<Esc>", [[<c-\><c-n>]])
-
 -- Toggle spell checking
 keymap.set("n", "<F11>", "<cmd>set spell!<cr>", { desc = "toggle spell" })
 keymap.set("i", "<F11>", "<c-o><cmd>set spell!<cr>", { desc = "toggle spell" })

@@ -28,7 +28,6 @@ local function packer_ensure_install()
   return true
 end
 
-
 local fresh_install = packer_ensure_install()
 
 -- Load packer.nvim
@@ -82,12 +81,6 @@ packer.startup {
     use { "jeetsukumaran/vim-pythonsense", ft = { "python" } }
 
     use { "machakann/vim-swap", event = "VimEnter" }
-
-    -- IDE for Lisp
-    if utils.executable("sbcl") then
-      -- use 'kovisoft/slimv'
-      use { "vlime/vlime", rtp = "vim/", ft = { "lisp" } }
-    end
 
     -- Super fast buffer jump
     use {
@@ -182,12 +175,6 @@ packer.startup {
       use { "tyru/open-browser.vim", event = "VimEnter" }
     end
 
-    -- Only install these plugins if ctags are installed on the system
-    if utils.executable("ctags") then
-      -- show file tags in vim window
-      use { "liuchengxu/vista.vim", cmd = "Vista" }
-    end
-
     -- Snippet engine and snippet template
     use { "SirVer/ultisnips", event = "InsertEnter" }
     use { "honza/vim-snippets", after = "ultisnips" }
@@ -198,8 +185,6 @@ packer.startup {
     -- Comment plugin
     use { "tpope/vim-commentary", event = "VimEnter" }
 
-    -- Multiple cursor plugin like Sublime Text?
-    -- use 'mg979/vim-visual-multi'
 
     -- Autosave files on certain events
     use { "907th/vim-auto-save", event = "InsertEnter" }
@@ -208,23 +193,11 @@ packer.startup {
     use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
 
     -- Manage your yank history
-    if vim.g.is_win or vim.g.is_mac then
-      use { "svermeulen/vim-yoink", event = "VimEnter" }
-    end
-
-    -- Handy unix command inside Vim (Rename, Move etc.)
-    use { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } }
 
     -- Repeat vim motions
     use { "tpope/vim-repeat", event = "VimEnter" }
 
     use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
-
-    if vim.g.is_mac then
-      use { "lyokha/vim-xkbswitch", event = { "InsertEnter" } }
-    elseif vim.g.is_win then
-      use { "Neur1n/neuims", event = { "InsertEnter" } }
-    end
 
     -- Auto format tools
     use { "sbdchd/neoformat", cmd = { "Neoformat" } }
@@ -269,47 +242,15 @@ packer.startup {
         ft = { "markdown" },
       }
     end
-
-    use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.zen-mode')]] }
-
-    if vim.g.is_mac then
-      use { "rhysd/vim-grammarous", ft = { "markdown" } }
-    end
-
-    use { "chrisbra/unicode.vim", event = "VimEnter" }
-
-    -- Additional powerful text object for vim, this plugin should be studied
-    -- carefully to use its full power
-    use { "wellle/targets.vim", event = "VimEnter" }
-
-    -- Plugin to manipulate character pairs quickly
-    use { "machakann/vim-sandwich", event = "VimEnter" }
-
-    -- Add indent object for vim (useful for languages like Python)
-    use { "michaeljsmith/vim-indent-object", event = "VimEnter" }
-
-    -- Only use these plugin on Windows and Mac and when LaTeX is installed
-    if vim.g.is_win or vim.g.is_mac and utils.executable("latex") then
-      use { "lervag/vimtex", ft = { "tex" } }
-    end
-
+     -- Session management plugin
+    use { "tpope/vim-obsession", cmd = "Obsession" }
+    
     -- Since tmux is only available on Linux and Mac, we only enable these plugins
     -- for Linux and Mac
     if utils.executable("tmux") then
       -- .tmux.conf syntax highlighting and setting check
       use { "tmux-plugins/vim-tmux", ft = { "tmux" } }
     end
-
-    -- Modern matchit implementation
-    use { "andymass/vim-matchup", event = "VimEnter" }
-
-    use { "tpope/vim-scriptease", cmd = { "Scriptnames", "Message", "Verbose" } }
-
-    -- Asynchronous command execution
-    use { "skywind3000/asyncrun.vim", opt = true, cmd = { "AsyncRun" } }
-
-    use { "cespare/vim-toml", ft = { "toml" }, branch = "main" }
-
     -- Edit text area in browser using nvim
     if vim.g.is_win or vim.g.is_mac then
       use {
@@ -321,17 +262,9 @@ packer.startup {
         setup = [[vim.cmd('packadd firenvim')]],
       }
     end
-
     -- Debugger plugin
     if vim.g.is_win or vim.g.is_linux then
       use { "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] }
-    end
-
-    -- Session management plugin
-    use { "tpope/vim-obsession", cmd = "Obsession" }
-
-    if vim.g.is_linux then
-      use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
     end
 
     -- The missing auto-completion for cmdline!
