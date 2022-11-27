@@ -126,8 +126,9 @@ packer.startup {
     use { "NTBBloodbath/doom-one.nvim", opt = true }
     use { "sainnhe/everforest", opt = true }
     use { "EdenEast/nightfox.nvim", opt = true }
-    use { "rebelot/kanagawa.nvim", opt = true }
+    use { "rebelot/kanagawa.nvim", as="nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
+
 
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
 
@@ -155,7 +156,8 @@ packer.startup {
     }
 
     -- Highlight URLs inside vim
-    use { "itchyny/vim-highlighturl", event = "VimEnter" }
+   -- use { "itchyny/vim-highlighturl", event = "VimEnter" }
+
 
     -- notification plugin
     use {
@@ -218,12 +220,12 @@ packer.startup {
     }
 
     -- Show git change (change, delete, add) signs in vim sign column
-    use { "lewis6991/gitsigns.nvim", config = [[require('config.gitsigns')]] }
+    use { "lewis6991/gitsigns.nvim", config = [[require('config.gitsigns')]]}
 
     -- Better git commit experience
-    use { "rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]] }
+   -- use { "rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]] }
 
-    use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.bqf')]] }
+    --use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.bqf')]] }
 
     -- Another markdown plugin
     use { "preservim/vim-markdown", ft = { "markdown" } }
@@ -269,17 +271,9 @@ packer.startup {
 
     -- The missing auto-completion for cmdline!
     use { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] }
-
     -- showing keybindings
-    use {
-      "folke/which-key.nvim",
-      event = "VimEnter",
-      config = function()
-        vim.defer_fn(function()
-          require("config.which-key")
-        end, 2000)
-      end,
-    }
+    
+    
 
     -- show and trim trailing whitespaces
     use { "jdhao/whitespace.nvim", event = "VimEnter" }
@@ -291,9 +285,9 @@ packer.startup {
       config = [[require('config.nvim-tree')]],
     }
 
-    use { "ii14/emmylua-nvim", ft = "lua" }
-
-    use { "j-hui/fidget.nvim", after = "nvim-lspconfig", config = [[require('config.fidget-nvim')]] }
+    --use { "ii14/emmylua-nvim", ft = "lua" }
+  
+    --use { "j-hui/fidget.nvim", after = "nvim-lspconfig", config = [[require('config.fidget-nvim')]] }
   end,
   config = {
     max_jobs = 16,

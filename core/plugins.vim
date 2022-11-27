@@ -55,18 +55,8 @@ if g:is_linux
   let g:Lf_ShowDevIcons = 0
 endif
 
-" Only fuzzy-search files names
-let g:Lf_DefaultMode = 'FullPath'
 
-" Popup window settings
-let w = float2nr(&columns * 0.8)
-if w > 140
-  let g:Lf_PopupWidth = 140
-else
-  let g:Lf_PopupWidth = w
-endif
-
-let g:Lf_PopupPosition = [0, float2nr((&columns - g:Lf_PopupWidth)/2)]
+"let g:Lf_PopupPosition = [0, float2nr((&columns - g:Lf_PopupWidth)/2)]
 
 " Do not use version control tool to list files under a directory since
 " submodules are not searched by default.
@@ -86,10 +76,10 @@ let g:Lf_ShortcutB = ''
 let g:Lf_WorkingDirectoryMode = 'a'
 
 " Search files in popup window
-nnoremap <silent> <leader>ff :<C-U>Leaderf file --popup<CR>
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
 
 " Grep project files in popup window
-nnoremap <silent> <leader>fg :<C-U>Leaderf rg --no-messages --popup<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 " Search vim help files
 nnoremap <silent> <leader>fh :<C-U>Leaderf help --popup<CR>
@@ -98,12 +88,12 @@ nnoremap <silent> <leader>fh :<C-U>Leaderf help --popup<CR>
 nnoremap <silent> <leader>ft :<C-U>Leaderf bufTag --popup<CR>
 
 " Switch buffers
-nnoremap <silent> <leader>fb :<C-U>Leaderf buffer --popup<CR>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
 
 " Search recent files
 nnoremap <silent> <leader>fr :<C-U>Leaderf mru --popup --absolute-path<CR>
 
-let g:Lf_PopupColorscheme = 'gruvbox_material'
+"let g:Lf_PopupColorscheme = 'gruvbox_material'
 
 " Change keybinding in LeaderF prompt mode, use ctrl-n and ctrl-p to navigate
 " items.

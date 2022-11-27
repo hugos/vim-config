@@ -72,7 +72,9 @@ M.everforest = function()
 end
 
 M.nightfox = function()
-  vim.cmd([[colorscheme nordfox]])
+  require('nightfox').setup() -- lua api version
+  vim.cmd([[colorscheme nightfox]])
+
 end
 
 M.kanagawa = function()
@@ -81,43 +83,11 @@ end
 
 M.catppuccin = function()
   -- available option: latte, frappe, macchiato, mocha
-  vim.g.catppuccin_flavour = "frappe"
+  -- vim.g.catppuccin_flavour = "frappe"
 
   require("catppuccin").setup()
 
   vim.cmd([[colorscheme catppuccin]])
 end
 
---- Use a random colorscheme from the pre-defined list of colorschemes.
---M.rand_colorscheme = function()
---  local colorscheme = utils.rand_element(vim.tbl_keys(M.colorscheme2dir))
---
---  if not vim.tbl_contains(vim.tbl_keys(M), colorscheme) then
---    local msg = "Invalid colorscheme: " .. colorscheme
---    vim.notify(msg, vim.log.levels.ERROR, { title = "nvim-config" })
---
---    return
---  end
---
---  -- Load the colorscheme, because all the colorschemes are declared as opt plugins, so the colorscheme isn't loaded yet.
---  local status = utils.add_pack(M.colorscheme2dir[colorscheme])
---
---  if not status then
---    local msg = string.format("Colorscheme %s is not installed. Run PackerSync to install.", colorscheme)
---    vim.notify(msg, vim.log.levels.ERROR, { title = "nvim-config" })
---
---    return
---  end
---
---  -- Load the colorscheme and its settings
---  M[colorscheme]()
---
---  if vim.g.logging_level == "debug" then
---    local msg = "Colorscheme: " .. colorscheme
---
---    vim.notify(msg, vim.log.levels.DEBUG, { title = "nvim-config" })
---  end
---end
---
----- Load a random colorscheme
-M.nord()
+M.catppuccin()
