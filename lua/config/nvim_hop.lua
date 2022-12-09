@@ -4,11 +4,11 @@ vim.cmd([[hi HopNextKey2 cterm=bold ctermfg=176 gui=bold guibg=#ff00ff guifg=#ff
 
 local keymap = vim.keymap
 local hop = require("hop")
-hop.setup {
-  case_insensitive = true,
-  char2_fallback_key = "<CR>",
-  quit_key = "<Esc>",
-}
+--hop.setup {
+--  case_insensitive = true,
+--  char2_fallback_key = "<CR>",
+--  quit_key = "<Esc>",
+--}
 
 keymap.set({ "n", "v", "o" }, "f", "", {
   silent = true,

@@ -3,9 +3,6 @@ scriptencoding utf-8
 " change fillchars for folding, vertical split, end of buffer, and message separator
 set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
 
-" Paste mode toggle, it seems that Nvim's bracketed paste mode
-" does not work very well for nvim-qt, so we use good-old paste mode
-set pastetoggle=<F12>
 
 " Split window below/right when creating horizontal/vertical windows
 set splitbelow splitright
@@ -18,9 +15,13 @@ set updatetime=500  " For CursorHold events
 
 " Clipboard settings, always use clipboard for all delete, yank, change, put
 " operation, see https://stackoverflow.com/q/30691466/6064933
-if !empty(provider#clipboard#Executable())
-  set clipboard+=unnamedplus
+if !empty(provider#clipboard#Executable()) 
+  set clipboard=unnamed
+"":help 'clipboar"
 endif
+
+
+
 
 " Disable creating swapfiles, see https://stackoverflow.com/q/821902/6064933
 set noswapfile

@@ -93,7 +93,7 @@ nnoremap <leader>b <cmd>Telescope buffers<cr>
 " Search recent files
 nnoremap <silent> <leader>fr :<C-U>Leaderf mru --popup --absolute-path<CR>
 
-"let g:Lf_PopupColorscheme = 'gruvbox_material'
+"let g:Lf_PopupColorscheme = 'gruvbox_material
 
 " Change keybinding in LeaderF prompt mode, use ctrl-n and ctrl-p to navigate
 " items.
@@ -127,33 +127,9 @@ let g:mundo_width = 80
 
 nnoremap <silent> <Space>u :MundoToggle<CR>
 
-""""""""""""""""""""""""""""vim-yoink settings"""""""""""""""""""""""""
-if g:is_win || g:is_mac
-  " ctrl-n and ctrl-p will not work if you add the TextChanged event to vim-auto-save events.
-  " nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-  " nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-
-  " The following p/P mappings are also needed for ctrl-n and ctrl-p to work
-  " nmap p <plug>(YoinkPaste_p)
-  " nmap P <plug>(YoinkPaste_P)
-
-  " Cycle the yank stack with the following mappings
-  nmap [y <plug>(YoinkRotateBack)
-  nmap ]y <plug>(YoinkRotateForward)
-
-  " Do not change the cursor position
-  nmap y <plug>(YoinkYankPreserveCursorPosition)
-  xmap y <plug>(YoinkYankPreserveCursorPosition)
-
-  " Move cursor to end of paste after multiline paste
-  let g:yoinkMoveCursorToEndOfPaste = 0
-
-  " Record yanks in system clipboard
-  let g:yoinkSyncSystemClipboardOnFocus = 1
-endif
 
 """"""""""""""""""""""""""""better-escape.vim settings"""""""""""""""""""""""""
-let g:better_escape_interval = 200
+"let g:better_escape_interval = 200
 
 """"""""""""""""""""""""""""vim-xkbswitch settings"""""""""""""""""""""""""
 let g:XkbSwitchEnabled = 1

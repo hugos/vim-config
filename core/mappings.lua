@@ -6,14 +6,14 @@ local uv = vim.loop
 keymap.set({ "n", "x" }, ";", ":")
 
 -- Turn the word under cursor to upper case
-keymap.set("i", "<c-u>", "<Esc>viwUea")
+--keymap.set("i", "<c-u>", "<Esc>viwUea")
 
 -- Turn the current word into title case
-keymap.set("i", "<c-t>", "<Esc>b~lea")
+--keymap.set("i", "<c-t>", "<Esc>b~lea")
 
 -- Paste non-linewise text above or below current line, see https://stackoverflow.com/a/1346777/6064933
-keymap.set("n", "<leader>p", "m`o<ESC>p``", { desc = "paste below current line" })
-keymap.set("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current line" })
+--keymap.set("n", "<leader>p", "m`o<ESC>p``", { desc = "paste below current line" })
+--keymap.set("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current line" })
 
 -- SHORTCUT TO SAVE FILE
 keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
@@ -116,7 +116,7 @@ keymap.set("n", "/", [[/\v]])
 keymap.set("n", "<leader>cd", "<cmd>lcd %:p:h<cr><cmd>pwd<cr>", { desc = "change cwd" })
 
 -- Use Esc to quit builtin terminal
-keymap.set("t", "<Esc>", [[<c-\><c-n>]])
+-- keymap.set("t", "<Esc>", [[<c-\><c-n>]])
 -- Toggle spell checking
 keymap.set("n", "<F11>", "<cmd>set spell!<cr>", { desc = "toggle spell" })
 keymap.set("i", "<F11>", "<c-o><cmd>set spell!<cr>", { desc = "toggle spell" })
@@ -135,7 +135,7 @@ keymap.set("n", "<leader><space>", "<cmd>StripTrailingWhitespace<cr>", { desc = 
 keymap.set("n", "<leader>st", "<cmd>call utils#SynGroup()<cr>", { desc = "check syntax group" })
 
 -- Copy entire buffer.
-keymap.set("n", "<leader>y", "<cmd>%yank<cr>", { desc = "yank entire buffer" })
+--keymap.set("n", "<leader>y", "<cmd>%yank<cr>", { desc = "yank entire buffer" })
 
 -- Toggle cursor column
 keymap.set("n", "<leader>cl", "<cmd>call utils#ToggleCursorCol()<cr>", { desc = "toggle cursor column" })
@@ -151,7 +151,7 @@ keymap.set("x", "<A-j>", '<cmd>call utils#MoveSelection("down")<cr>', { desc = "
 
 -- Replace visual selection with text in register, but not contaminate the register,
 -- see also https://stackoverflow.com/q/10723700/6064933.
-keymap.set("x", "p", '"_c<Esc>p')
+--keymap.set("x", "p", '"_c<Esc>p')
 
 -- Go to a certain buffer
 keymap.set("n", "gb", '<cmd>call buf_utils#GoToBuffer(v:count, "forward")<cr>', {
@@ -200,10 +200,10 @@ for _, ch in ipairs(undo_ch) do
 end
 
 -- insert semicolon in the end
-keymap.set("i", "<A-;>", "<Esc>miA;<Esc>`ii")
+--keymap.set("i", "<A-;>", "<Esc>miA;<Esc>`ii")
 
 -- Keep cursor position after yanking
-keymap.set("n", "y", "myy")
+--keymap.set("n", "y", "myy")
 
 api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
@@ -216,9 +216,6 @@ api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
--- Go to the beginning and end of current line in insert mode quickly
-keymap.set("i", "<C-S>", "<HOME>")
-keymap.set("i", "<C-E>", "<END>")
 
 -- Go to beginning of command in command-line mode
 --keymap.set("c", "<C-A>", "<HOME>")

@@ -199,7 +199,7 @@ packer.startup {
     -- Repeat vim motions
     use { "tpope/vim-repeat", event = "VimEnter" }
 
-    use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
+    --use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
 
     -- Auto format tools
     use { "sbdchd/neoformat", cmd = { "Neoformat" } }

@@ -6,7 +6,7 @@ local M = {}
 
 -- Colorscheme to its directory name mapping, because colorscheme repo name is not necessarily
 -- the same as the colorscheme name itself.
-M.colorscheme2dir = {
+M.colorschemedir = {
   gruvbox8 = "vim-gruvbox8",
   onedark = "onedark.nvim",
   edge = "edge",
@@ -71,11 +71,10 @@ M.everforest = function()
   vim.cmd([[colorscheme everforest]])
 end
 
-M.nightfox = function()
-  require('nightfox').setup() -- lua api version
-  vim.cmd([[colorscheme nightfox]])
-
-end
+--M.nightfox = function()
+--  require('nightfox').setup() -- lua api version
+--  vim.cmd([[colorscheme nightfox]])
+--end
 
 M.kanagawa = function()
   vim.cmd([[colorscheme kanagawa]])
