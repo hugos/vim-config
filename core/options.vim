@@ -20,6 +20,7 @@ if !empty(provider#clipboard#Executable())
 "":help 'clipboar"
 endif
 
+" Cursor
 
 
 

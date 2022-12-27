@@ -83,15 +83,15 @@ packer.startup {
     use { "machakann/vim-swap", event = "VimEnter" }
 
     -- Super fast buffer jump
-    use {
-      "phaazon/hop.nvim",
-      event = "VimEnter",
-      config = function()
-        vim.defer_fn(function()
-          require("config.nvim_hop")
-        end, 2000)
-      end,
-    }
+   -- use {
+   --   "phaazon/hop.nvim",
+   --   event = "VimEnter",
+   --   config = function()
+   --     vim.defer_fn(function()
+   --       require("config.nvim_hop")
+   --     end, 2000)
+   --   end,
+   -- }
 
     -- Show match number and index for searching
     use {
@@ -126,8 +126,9 @@ packer.startup {
     use { "NTBBloodbath/doom-one.nvim", opt = true }
     use { "sainnhe/everforest", opt = true }
     use { "EdenEast/nightfox.nvim", opt = true }
-    use { "rebelot/kanagawa.nvim", as="nightfox", opt = true }
+    use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
+    use { "lalitmee/cobalt2.nvim", as = "cobalt2", opt = true} 
 
 
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }

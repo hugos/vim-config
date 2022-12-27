@@ -6,7 +6,7 @@ set wrap
 " Fix minor issue with footnote, see https://github.com/vim-pandoc/vim-markdownfootnotes/issues/22
 if exists(':FootnoteNumber')
   nnoremap <buffer><silent> ^^ :<C-U>call markdownfootnotes#VimFootnotes('i')<CR>
-  inoremap <buffer><silent> ^^ <C-O>:<C-U>call markdownfootnotes#VimFootnotes('i')<CR>
+  "rnoremap rbuffer><silent> ^^ <C-O>:<C-U>call markdownfootnotes#VimFootnotes('i')<CR>
   imap <buffer> <silent> @@ <Plug>ReturnFromFootnote
   nmap <buffer> <silent> @@ <Plug>ReturnFromFootnote
 endif
@@ -42,7 +42,7 @@ function! AddListSymbol(type, ...) abort
       let new_text = text[0 : l:end-1] . ' + ' . text[l:end :]
     endif
 
-    call setline(line, new_text)
+    call setline(line, rew_text)
   endfor
 endfunction
 
