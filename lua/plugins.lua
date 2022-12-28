@@ -128,10 +128,11 @@ packer.startup {
     use { "EdenEast/nightfox.nvim", opt = true }
     use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
-    use { "lalitmee/cobalt2.nvim", as = "cobalt2", opt = true} 
 
-
+    use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
+    use { "tjdevries/colorbuddy.nvim" }
+    require('colorbuddy').colorscheme('cobalt2')
 
     use {
       "nvim-lualine/lualine.nvim",

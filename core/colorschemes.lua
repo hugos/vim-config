@@ -18,7 +18,6 @@ M.colorschemedir = {
   nightfox = "nightfox.nvim",
   kanagawa = "kanagawa.nvim",
   catppuccin = "catppuccin",
-  cobalt2 = "cobalt2.nvim",
 }
 
 M.gruvbox8 = function()
@@ -49,10 +48,10 @@ M.sonokai = function()
   vim.cmd([[colorscheme sonokai]])
 end
 
-M.cobalt2 = function()
-
-  vim.cmd([[colorscheme cobalt2]])
-end
+--M.cobalt2 = function()
+--
+--  vim.cmd([[colorscheme cobalt2]])
+--end
 
 
 M.gruvbox_material = function()
@@ -95,4 +94,5 @@ M.catppuccin = function()
   vim.cmd([[colorscheme catppuccin]])
 end
 
-M.gruvbox8()
+--M.catppuccin()
+vim.cmd([[colorscheme cobalt2]])

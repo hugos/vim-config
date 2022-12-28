@@ -22,7 +22,7 @@ endif
 
 " Cursor
 
-
+set cursorline
 
 " Disable creating swapfiles, see https://stackoverflow.com/q/821902/6064933
 set noswapfile

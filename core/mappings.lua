@@ -7,7 +7,6 @@ keymap.set({ "n", "x" }, ";", ":")
 
 -- Turn the word under cursor to upper case
 --keymap.set("i", "<c-u>", "<Esc>viwUea")
-
 -- Turn the current word into title case
 --keymap.set("i", "<c-t>", "<Esc>b~lea")
 
@@ -51,25 +50,21 @@ keymap.set("n", [[\d]], "<cmd>bprevious <bar> bdelete #<cr>", {
 
 -- Insert a blank line below or above current line (do not move the cursor),
 -- see https://stackoverflow.com/a/16136133/6064933
-keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", {
-  expr = true,
-  desc = "insert line below",
-})
+--keymap.set("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", {
+  --expr = true,
+  --desc = "insert line below",
+--})
 
-keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
-  expr = true,
-  desc = "insert line above",
-})
+--keymap.set("n", "<space>O", "printf('m`%sO<ESC>``', v:count1)", {
+  --expr = true,
+  --desc = "insert line above",
+--})
 
--- Move the cursor based on physical lines, not the actual lines.
-keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true })
-keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true })
-keymap.set("n", "^", "g^")
-keymap.set("n", "0", "g0")
-
+--The cursor based on physical lines, not the actual lines.
 -- Do not include white space characters when using $ in visual mode,
 -- see https://vi.stackexchange.com/q/12607/15292
 keymap.set("x", "$", "g_")
+
 
 -- Go to start or end of line easier
 keymap.set({ "n", "x" }, "H", "^")
@@ -160,12 +155,19 @@ keymap.set("n", "gb", '<cmd>call buf_utils#GoToBuffer(v:count, "forward")<cr>', 
 keymap.set("n", "gB", '<cmd>call buf_utils#GoToBuffer(v:count, "backward")<cr>', {
   desc = "go to buffer (backward)",
 })
+-- Close Current Buffer
+
+keymap.set("n", "<C-X>", "<cmd>:bd<cr>")
 
 -- Switch windows
---keymap.set("n", "<left>", "<c-w>h")
---keymap.set("n", "<Right>", "<C-W>l")
---keymap.set("n", "<Up>", "<C-W>k")
---keymap.set("n", "<Down>", "<C-W>j")
+keymap.set("n", "<left>", "<c-w>h")
+keymap.set("n", "<Right>", "<C-W>l")
+keymap.set("n", "<Up>", "<C-W>k")
+keymap.set("n", "<Down>", "<C-W>j")
+
+
+-- Create window
+keymap.set("n", "<leader>vs", "<cmd>:vsplit<cr>")
 
 -- Text objects for URL
 keymap.set({ "x", "o" }, "iu", "<cmd>call text_obj#URL()<cr>", { desc = "URL text object" })
@@ -174,33 +176,13 @@ keymap.set({ "x", "o" }, "iu", "<cmd>call text_obj#URL()<cr>", { desc = "URL tex
 keymap.set({ "x", "o" }, "iB", "<cmd>call text_obj#Buffer()<cr>", { desc = "buffer text object" })
 
 -- Do not move my cursor when joining lines.
-keymap.set("n", "J", function()
-  vim.cmd([[
-      normal! mzJ`z
-      delmarks z
-    ]])
+keymap.set("n", "J", function() vim.cmd([[ normal! mzJ`z delmarks z ]])
 end, {
-  desc = "join line",
-})
+  desc = "join line", })
 
-keymap.set("n", "gJ", function()
-  -- we must use `normal!`, otherwise it will trigger recursive mapping
-  vim.cmd([[
-      normal! zmgJ`z
-      delmarks z
-    ]])
-end, {
-  desc = "join visual lines",
-})
-
--- Break inserted text into smaller undo units when we insert some punctuation chars.
-local undo_ch = { ",", ".", "!", "?", ";", ":" }
-for _, ch in ipairs(undo_ch) do
-  keymap.set("i", ch, ch .. "<c-g>u")
-end
 
 -- insert semicolon in the end
---keymap.set("i", "<A-;>", "<Esc>miA;<Esc>`ii")
+keymap.set("i", "<C-,>", "<Esc>miA;<Esc>`ii")
 
 -- Keep cursor position after yanking
 --keymap.set("n", "y", "myy")
@@ -221,7 +203,7 @@ api.nvim_create_autocmd("TextYankPost", {
 --keymap.set("c", "<C-A>", "<HOME>")
 
 -- Delete the character to the right of the cursor
---keymap.set("i", "<C-D>", "<DEL>")
+keymap.set("i", "<C-D>", "<DEL>")
 
 keymap.set("n", "<leader>cb", function()
   local cnt = 0
