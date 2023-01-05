@@ -145,11 +145,11 @@ packer.startup {
       cond = firenvim_not_active,
       config = [[require('config.bufferline')]] }
 
-    -- fancy start screen
-    use { "glepnir/dashboard-nvim", event = "VimEnter",
-      cond = firenvim_not_active,
-      config = [[require('config.dashboard-nvim')]]
-    }
+    ---- fancy start screen
+    --use { "glepnirdashboard-nvim", event = "VimEnter",
+    --  cond = firenvim_not_active,
+    --  config = [[require('config.dashboard-nvim')]]
+    --}
 
     use {
       "lukas-reineke/indent-blankline.nvim",
@@ -231,6 +231,10 @@ packer.startup {
 
     -- Another markdown plugin
     use { "preservim/vim-markdown", ft = { "markdown" } }
+    
+
+    -- Nerd Tree
+    -- use { 'preservim/nerdtree' }
 
     -- Faster footnote generation
     use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }

@@ -11,6 +11,11 @@ set splitbelow splitright
 " see https://unix.stackexchange.com/q/36882/221410 for more info
 set timeoutlen=500
 
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
+
+
+
 set updatetime=500  " For CursorHold events
 
 " Clipboard settings, always use clipboard for all delete, yank, change, put

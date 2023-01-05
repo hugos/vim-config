@@ -105,8 +105,8 @@ if g:is_win || g:is_mac
   let g:netrw_nogx = 1
 
   " Use another mapping for the open URL method
-  nmap ob <Plug>(openbrowser-smart-search)
-  xmap ob <Plug>(openbrowser-smart-search)
+  "nmap ob <Plug>(openbrowser-smart-search)
+  "xmap ob <Plug>(openbrowser-smart-search)
 endif
 
 """"""""""""""""""""""""""" vista settings """"""""""""""""""""""""""""""""""
