@@ -116,6 +116,7 @@ packer.startup {
     -- search emoji and other symbols
     use { "nvim-telescope/telescope-symbols.nvim", after = "telescope.nvim" }
 
+
     -- A list of colorscheme plugin you may want to try. Find what suits you.
     use { "lifepillar/vim-gruvbox8", opt = true }
     use { "navarasu/onedark.nvim", opt = true }
@@ -145,7 +146,7 @@ packer.startup {
       cond = firenvim_not_active,
       config = [[require('config.bufferline')]] }
 
-    ---- fancy start screen
+    --- fancy start screen
     --use { "glepnirdashboard-nvim", event = "VimEnter",
     --  cond = firenvim_not_active,
     --  config = [[require('config.dashboard-nvim')]]
