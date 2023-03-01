@@ -18,7 +18,7 @@ keymap.set({ "n", "x" }, ";", ":")
 keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
 
 -- Saves the file if modified and quit
-keymap.set("n", "<leader>q", "<cmd>x<cr>", { silent = true, desc = "quit current window" })
+keymap.set("n", "<leader>q", "<cmd>:wq<cr>", { silent = true, desc = "quit current window" })
 
 -- Quit all opened buffers
 keymap.set("n", "<leader>Q", "<cmd>qa!<cr>", { silent = true, desc = "quit nvim" })
@@ -164,6 +164,13 @@ keymap.set("n", "<left>", "<c-w>h")
 keymap.set("n", "<Right>", "<C-W>l")
 keymap.set("n", "<Up>", "<C-W>k")
 keymap.set("n", "<Down>", "<C-W>j")
+
+
+-- Switch buffers
+keymap.set("n", "<C-W>", "<cmd>:bp<cr>")
+
+-- Quit file
+--keymap.set("n", "<C-Q>", "<cmd>")
 
 
 -- Create window

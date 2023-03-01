@@ -48,11 +48,6 @@ M.sonokai = function()
   vim.cmd([[colorscheme sonokai]])
 end
 
---M.cobalt2 = function()
---
---  vim.cmd([[colorscheme cobalt2]])
---end
-
 
 M.gruvbox_material = function()
   vim.g.gruvbox_material_enable_italic = 1
@@ -96,3 +91,4 @@ end
 
 --M.catppuccin()
 vim.cmd([[colorscheme cobalt2]])
+

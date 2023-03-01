@@ -5,7 +5,7 @@ augroup dynamic_smartcase
   autocmd CmdLineLeave : set smartcase
 augroup END
 
-augroup term_settings
+"augroup term_settings
   autocmd!
   " Do not use number and relative number for terminal inside nvim
   autocmd TermOpen * setlocal norelativenumber nonumber
@@ -41,11 +41,11 @@ function s:resume_cursor_position() abort
   endif
 endfunction
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
-augroup END
+"augroup numbertoggle
+"  autocmd!
+"  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+"  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+"augroup END
 
 " Define or override some highlight groups
 augroup custom_highlight
@@ -107,10 +107,10 @@ function! s:handle_large_file() abort
   if getfsize(f) > g:large_file || getfsize(f) == -2
     set eventignore+=all
     " turning off relative number helps a lot
-    set norelativenumber
+    ""set norelativenumber
     setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1
   else
-    set eventignore-=all relativenumber
+    "set eventignore-=all relativenumber
   endif
 endfunction
 

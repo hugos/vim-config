@@ -126,8 +126,8 @@ packer.startup {
     use { "shaunsingh/nord.nvim", opt = true }
     use { "NTBBloodbath/doom-one.nvim", opt = true }
     use { "sainnhe/everforest", opt = true }
-    use { "EdenEast/nightfox.nvim", opt = true }
-    use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
+    use { "EdenEast/nightfox.nvim", as="nightfox" ,opt = true }
+    --use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
 
     use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
