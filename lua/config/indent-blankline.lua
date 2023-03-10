@@ -5,7 +5,9 @@ require("indent_blankline").setup {
   -- U+2502 may also be a good choice, it will be on the middle of cursor.
   -- U+250A is also a good choice
   char = "▏",
-  show_end_of_line = false,
+  show_end_of_line = true,
+  show_current_context= true,
+  show_current_context_start = true,
   disable_with_nolist = true,
   buftype_exclude = { "terminal" },
   filetype_exclude = exclude_ft,

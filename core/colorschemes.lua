@@ -90,5 +90,5 @@ M.catppuccin = function()
 end
 
 --M.catppuccin()
-vim.cmd([[colorscheme night-owl]])
+vim.cmd([[colorscheme xcodedark]])
 

@@ -131,11 +131,13 @@ packer.startup {
     use { "EdenEast/nightfox.nvim", as="nightfox" ,opt = true }
     --use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
+    use {'fcpg/vim-farout', as = "farout", opt = true}
 
     use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
     use { "tjdevries/colorbuddy.nvim" }
     require('colorbuddy').colorscheme('cobalt2')
+    use {'arzg/vim-colors-xcode', opt=true}
 
     use {
       "nvim-lualine/lualine.nvim",
@@ -234,10 +236,7 @@ packer.startup {
 
     -- Another markdown plugin
     use { "preservim/vim-markdown", ft = { "markdown" } }
-    
 
-    -- Nerd Tree
-    -- use { 'preservim/nerdtree' }
 
     -- Faster footnote generation
     use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
@@ -255,7 +254,7 @@ packer.startup {
     end
      -- Session management plugin
     use { "tpope/vim-obsession", cmd = "Obsession" }
-    
+
     -- Since tmux is only available on Linux and Mac, we only enable these plugins
     -- for Linux and Mac
     if utils.executable("tmux") then
@@ -281,8 +280,7 @@ packer.startup {
     -- The missing auto-completion for cmdline!
     use { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] }
     -- showing keybindings
-    
-    
+
 
     -- show and trim trailing whitespaces
     use { "jdhao/whitespace.nvim", event = "VimEnter" }
@@ -294,9 +292,6 @@ packer.startup {
       config = [[require('config.nvim-tree')]],
     }
 
-    --use { "ii14/emmylua-nvim", ft = "lua" }
-  
-    --use { "j-hui/fidget.nvim", after = "nvim-lspconfig", config = [[require('config.fidget-nvim')]] }
   end,
   config = {
     max_jobs = 16,

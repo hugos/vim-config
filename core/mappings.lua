@@ -36,6 +36,11 @@ keymap.set("n", "]q", "<cmd>cnext<cr>zv", { silent = true, desc = "next qf item"
 keymap.set("n", "[Q", "<cmd>cfirst<cr>zv", { silent = true, desc = "first qf item" })
 keymap.set("n", "]Q", "<cmd>clast<cr>zv", { silent = true, desc = "last qf item" })
 
+
+-- NerdTree
+keymap.set("n", "<leader>f", "<cmd>:NvimTreeToggle<cr>", { silent = true, desc = "Open Nvim NerdTree" })
+
+
 -- Close location list or quickfix list if they are present, see https://superuser.com/q/355325/736190
 keymap.set("n", [[\x]], "<cmd>windo lclose <bar> cclose <cr>", {
   silent = true,
@@ -167,11 +172,7 @@ keymap.set("n", "<Down>", "<C-W>j")
 
 
 -- Switch buffers
-keymap.set("n", "<C-W>", "<cmd>:bp<cr>")
-
--- Quit file
---keymap.set("n", "<C-Q>", "<cmd>")
-
+--keymap.set("n", "<C-W>", "<cmd>:bp<cr>") -- Quit file
 
 -- Create window
 keymap.set("n", "<leader>vs", "<cmd>:vsplit<cr>")
