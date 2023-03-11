@@ -138,6 +138,7 @@ packer.startup {
     use { "tjdevries/colorbuddy.nvim" }
     require('colorbuddy').colorscheme('cobalt2')
     use {'arzg/vim-colors-xcode', opt=true}
+    use {'ayu-theme/ayu-vim', opt=true}
 
     use {
       "nvim-lualine/lualine.nvim",
