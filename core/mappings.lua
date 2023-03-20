@@ -38,7 +38,7 @@ keymap.set("n", "]Q", "<cmd>clast<cr>zv", { silent = true, desc = "last qf item"
 
 
 -- NerdTree
-keymap.set("n", "<leader>f", "<cmd>:NvimTreeToggle<cr>", { silent = true, desc = "Open Nvim NerdTree" })
+keymap.set("n", "<space>s", "<cmd>:NvimTreeToggle<cr>", { silent = true, desc = "Open Nvim NerdTree" })
 
 
 -- Close location list or quickfix list if they are present, see https://superuser.com/q/355325/736190

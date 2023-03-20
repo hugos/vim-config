@@ -5,7 +5,7 @@ nvim_tree.setup {
   auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
-  hijack_netrw = false,
+  hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
   ignore_buffer_on_setup = false,
   open_on_setup = false,
@@ -76,7 +76,7 @@ nvim_tree.setup {
     timeout = 400,
   },
   actions = {
-    use_system_clipboard = false,
+    use_system_clipboard = true,
     change_dir = {
       enable = true,
       global = false,
@@ -113,6 +113,3 @@ nvim_tree.setup {
   },
 }
 
-keymap.set("n", "<space>s", function()
-  return require("nvim-tree").toggle(false, true)
-end, { silent = true, desc = "toggle nvim-tree" })

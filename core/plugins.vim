@@ -125,7 +125,7 @@ nnoremap <silent> <Space>t :<C-U>Vista!!<CR>
 let g:mundo_verbose_graph = 0
 let g:mundo_width = 80
 
-nnoremap <silent> <Space>u :MundoToggle<CR>
+nnoremap <silent> <Space>m :MundoToggle<CR>
 
 
 """"""""""""""""""""""""""""better-escape.vim settings"""""""""""""""""""""""""
@@ -136,6 +136,9 @@ let g:XkbSwitchEnabled = 1
 
 """""""""""""""""""""""""""""" neoformat settings """""""""""""""""""""""
 let g:neoformat_enabled_python = ['black', 'yapf']
+let g:neoformat_enabled_javascript = ['js-beautify', 'prettierd', 'prettier']
+let g:neoformat_enabled_html = ['prettierd', 'prettier']
+let g:neoformat_enabled_css= ['js-beautify','prettierd', 'prettier']
 let g:neoformat_cpp_clangformat = {
       \ 'exe': 'clang-format',
       \ 'args': ['--style="{IndentWidth: 4}"']
@@ -147,7 +150,9 @@ let g:neoformat_c_clangformat = {
 
 let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_c = ['clangformat']
+let g:neoformat_try_node_exe = 1
 
+nnoremap <silent> <Space>f :Neoformat jsbeautify <CR>
 """""""""""""""""""""""""vim-markdown settings"""""""""""""""""""
 " Disable header folding
 let g:vim_markdown_folding_disabled = 1

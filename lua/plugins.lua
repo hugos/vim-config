@@ -93,6 +93,10 @@ packer.startup {
    --   end,
    -- }
 
+  -- Game/Plugin designed to improve vim gestures and muscle memory
+  use {'ThePrimeagen/vim-be-good' }
+
+
     -- Show match number and index for searching
     use {
       "kevinhwang91/nvim-hlslens",
@@ -127,7 +131,7 @@ packer.startup {
     use { "NTBBloodbath/doom-one.nvim", opt = true }
     use { "sainnhe/everforest", opt = true }
     use {'haishanh/night-owl.vim', opt = true}
-    use {'svrana/neosolarized.nvim', opt= true, requires = 'tjdevries/colorbuddy.nvim'  }
+    use {'svrana/neosolarized.nvim', opt= true, requires = 'tjdevries/colorbuddy.nvim' }
     use { "EdenEast/nightfox.nvim", as="nightfox" ,opt = true }
     --use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
@@ -135,10 +139,12 @@ packer.startup {
 
     use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
-    use { "tjdevries/colorbuddy.nvim" }
-    require('colorbuddy').colorscheme('cobalt2')
     use {'arzg/vim-colors-xcode', opt=true}
     use {'ayu-theme/ayu-vim', opt=true}
+
+    require('colorbuddy').colorscheme('cobalt2')
+    require('colorbuddy').colorscheme('neosolarized')
+    use {'tjdevries/colorbuddy.nvim'}
 
     use {
       "nvim-lualine/lualine.nvim",
