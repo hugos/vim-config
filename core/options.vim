@@ -191,5 +191,5 @@ set diffopt+=internal,indent-heuristic,algorithm:histogram
 set nowrap  " do no wrap
 set noruler
 
-set background="#101010"
+set background = "dark"
 

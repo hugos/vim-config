@@ -122,6 +122,9 @@ packer.startup {
 
 
     -- A list of colorscheme plugin you may want to try. Find what suits you.
+    use {'nyoom-engineering/oxocarbon.nvim'}
+    use ({'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
+    use { 'safv12/andromeda.vim'}
     use { "lifepillar/vim-gruvbox8", opt = true }
     use { "navarasu/onedark.nvim", opt = true }
     use { "sainnhe/edge", opt = true }
@@ -297,7 +300,11 @@ packer.startup {
       "kyazdani42/nvim-tree.lua",
       requires = { "kyazdani42/nvim-web-devicons" },
       config = [[require('config.nvim-tree')]],
-    }
+ 
+      use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+        end }
+      }
 
   end,
   config = {

@@ -90,5 +90,6 @@ M.catppuccin = function()
 end
 
 --M.catppuccin()
-vim.cmd([[colorscheme ayu]])
+--vim.cmd([[colorscheme ayu]])
+vim.cmd([[colorscheme cobalt2]])
 

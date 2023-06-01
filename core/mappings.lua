@@ -40,6 +40,9 @@ keymap.set("n", "]Q", "<cmd>clast<cr>zv", { silent = true, desc = "last qf item"
 -- NerdTree
 keymap.set("n", "<space>s", "<cmd>:NvimTreeToggle<cr>", { silent = true, desc = "Open Nvim NerdTree" })
 
+-- Term
+keymap.set("n", "<space>t", "<cmd>:ToggleTerm<cr>", { silent = true, desc = "Open Terminal" })
+
 
 -- Close location list or quickfix list if they are present, see https://superuser.com/q/355325/736190
 keymap.set("n", [[\x]], "<cmd>windo lclose <bar> cclose <cr>", {
