@@ -18,6 +18,7 @@ M.colorschemedir = {
   nightfox = "nightfox.nvim",
   kanagawa = "kanagawa.nvim",
   catppuccin = "catppuccin",
+  tokyonight = "tokyonight"
 }
 
 M.gruvbox8 = function()
@@ -89,7 +90,12 @@ M.catppuccin = function()
   vim.cmd([[colorscheme catppuccin]])
 end
 
---M.catppuccin()
+M.tokyonight = function()
+  require("tokyonight").setup()
+  vim.cmd([[colorscheme tokyonight-moon]])
+end
+
+
+M.tokyonight()
 --vim.cmd([[colorscheme ayu]])
-vim.cmd([[colorscheme cobalt2]])
 

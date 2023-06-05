@@ -134,20 +134,23 @@ packer.startup {
     use { "NTBBloodbath/doom-one.nvim", opt = true }
     use { "sainnhe/everforest", opt = true }
     use {'haishanh/night-owl.vim', opt = true}
-    use {'svrana/neosolarized.nvim', opt= true, requires = 'tjdevries/colorbuddy.nvim' }
     use { "EdenEast/nightfox.nvim", as="nightfox" ,opt = true }
     --use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
     use {'fcpg/vim-farout', as = "farout", opt = true}
-
-    use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
+    use {'folke/tokyonight.nvim'}
+    -- use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
     use {'arzg/vim-colors-xcode', opt=true}
     use {'ayu-theme/ayu-vim', opt=true}
 
-    require('colorbuddy').colorscheme('cobalt2')
-    require('colorbuddy').colorscheme('neosolarized')
-    use {'tjdevries/colorbuddy.nvim'}
+    --require('colorbuddy').colorscheme('cobalt2')
+    --require('colorbuddy').colorscheme('neosolarized')
+    --use {'tjdevries/colorbuddy.nvim'}
+    use {'norcalli/nvim-base16.lua'}
+
+    -- Theme setup
+    --base16(base16.themes['solarized-dark'], true)
 
     use {
       "nvim-lualine/lualine.nvim",
@@ -300,7 +303,7 @@ packer.startup {
       "kyazdani42/nvim-tree.lua",
       requires = { "kyazdani42/nvim-web-devicons" },
       config = [[require('config.nvim-tree')]],
- 
+
       use {"akinsho/toggleterm.nvim", tag = '*', config = function()
         require("toggleterm").setup()
         end }
