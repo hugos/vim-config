@@ -143,7 +143,7 @@ packer.startup {
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
     use {'arzg/vim-colors-xcode', opt=true}
     use {'ayu-theme/ayu-vim', opt=true}
-
+    use { "ellisonleao/gruvbox.nvim" }
     --require('colorbuddy').colorscheme('cobalt2')
     --require('colorbuddy').colorscheme('neosolarized')
     --use {'tjdevries/colorbuddy.nvim'}
@@ -152,6 +152,7 @@ packer.startup {
     -- Theme setup
     --base16(base16.themes['solarized-dark'], true)
 
+
     use {
       "nvim-lualine/lualine.nvim",
       event = "VimEnter",
@@ -159,9 +160,9 @@ packer.startup {
       config = [[require('config.statusline')]],
     }
 
-    use { "akinsho/bufferline.nvim", event = "VimEnter",
-      cond = firenvim_not_active,
-      config = [[require('config.bufferline')]] }
+   -- use { "akinsho/bufferline.nvim", event = "VimEnter",
+   --   cond = firenvim_not_active,
+   --   config = [[require('config.bufferline')]] }
 
     --- fancy start screen
     --use { "glepnirdashboard-nvim", event = "VimEnter",
@@ -174,10 +175,6 @@ packer.startup {
       event = "VimEnter",
       config = [[require('config.indent-blankline')]],
     }
-
-    -- Highlight URLs inside vim
-   -- use { "itchyny/vim-highlighturl", event = "VimEnter" }
-
 
     -- notification plugin
     use {
@@ -242,14 +239,8 @@ packer.startup {
     -- Show git change (change, delete, add) signs in vim sign column
     use { "lewis6991/gitsigns.nvim", config = [[require('config.gitsigns')]]}
 
-    -- Better git commit experience
-   -- use { "rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]] }
-
-    --use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.bqf')]] }
-
-    -- Another markdown plugin
+   -- Another markdown plugin
     use { "preservim/vim-markdown", ft = { "markdown" } }
-
 
     -- Faster footnote generation
     use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
@@ -293,7 +284,6 @@ packer.startup {
     -- The missing auto-completion for cmdline!
     use { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] }
     -- showing keybindings
-
 
     -- show and trim trailing whitespaces
     use { "jdhao/whitespace.nvim", event = "VimEnter" }

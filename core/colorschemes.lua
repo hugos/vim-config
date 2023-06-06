@@ -18,7 +18,8 @@ M.colorschemedir = {
   nightfox = "nightfox.nvim",
   kanagawa = "kanagawa.nvim",
   catppuccin = "catppuccin",
-  tokyonight = "tokyonight"
+  tokyonight = "tokyonight",
+  gruvbox = "gruvbox"
 }
 
 M.gruvbox8 = function()
@@ -95,7 +96,12 @@ M.tokyonight = function()
   vim.cmd([[colorscheme tokyonight-moon]])
 end
 
+M.gruvbox = function()
+  require("gruvbox").setup()
+  vim.o.background = "dark" -- or "light"
+  vim.cmd([[colorscheme gruvbox]])
+end
 
-M.tokyonight()
+M.gruvbox()
 --vim.cmd([[colorscheme ayu]])
 

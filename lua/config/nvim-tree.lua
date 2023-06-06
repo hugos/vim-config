@@ -7,7 +7,6 @@ nvim_tree.setup {
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  open_on_setup_file = false,
   open_on_tab = false,
   sort_by = "name",
   update_cwd = false,
