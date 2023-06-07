@@ -170,6 +170,9 @@ packer.startup {
     --  config = [[require('config.dashboard-nvim')]]
     --}
 
+    -- Tool for testing startup time
+    use {"dstein64/vim-startuptime"}
+
     use {
       "lukas-reineke/indent-blankline.nvim",
       event = "VimEnter",
