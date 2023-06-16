@@ -45,13 +45,10 @@ packer.startup {
   function(use)
     -- it is recommended to put impatient.nvim before any other plugins
     use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
-
     use { "wbthomason/packer.nvim", opt = true }
-
     use { "onsails/lspkind-nvim", event = "VimEnter" }
     -- auto-completion engine
     use { "hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('config.nvim-cmp')]] }
-
     -- nvim-cmp completion sources
     use { "hrsh7th/cmp-nvim-lsp", after = "nvim-cmp" }
     use { "hrsh7th/cmp-path", after = "nvim-cmp" }
@@ -61,7 +58,6 @@ packer.startup {
     if vim.g.is_mac then
       use { "hrsh7th/cmp-emoji", after = "nvim-cmp" }
     end
-
     -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
     use { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require('config.lsp')]] }
 
@@ -74,12 +70,11 @@ packer.startup {
       }
     end
 
+
     -- Python indent (follows the PEP8 style)
     use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
-
     -- Python-related text object
     use { "jeetsukumaran/vim-pythonsense", ft = { "python" } }
-
     use { "machakann/vim-swap", event = "VimEnter" }
 
     -- Super fast buffer jump
@@ -95,15 +90,13 @@ packer.startup {
 
   -- Game/Plugin designed to improve vim gestures and muscle memory
   use {'ThePrimeagen/vim-be-good' }
-
-
     -- Show match number and index for searching
-    use {
-      "kevinhwang91/nvim-hlslens",
-      branch = "main",
-      keys = { { "n", "*" }, { "n", "#" }, { "n", "n" }, { "n", "N" } },
-      config = [[require('config.hlslens')]],
-    }
+  use {
+    "kevinhwang91/nvim-hlslens",
+    branch = "main",
+    keys = { { "n", "*" }, { "n", "#" }, { "n", "n" }, { "n", "N" } },
+    config = [[require('config.hlslens')]],
+  }
 
     -- File search, tag search and more
     if vim.g.is_win then
@@ -139,19 +132,15 @@ packer.startup {
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
     use {'fcpg/vim-farout', as = "farout", opt = true}
     use {'folke/tokyonight.nvim'}
-    -- use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
+    use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
     use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
     use {'arzg/vim-colors-xcode', opt=true}
     use {'ayu-theme/ayu-vim', opt=true}
     use { "ellisonleao/gruvbox.nvim" }
-    --require('colorbuddy').colorscheme('cobalt2')
-    --require('colorbuddy').colorscheme('neosolarized')
-    --use {'tjdevries/colorbuddy.nvim'}
     use {'norcalli/nvim-base16.lua'}
-
-    -- Theme setup
-    --base16(base16.themes['solarized-dark'], true)
-
+    use {'svrana/neosolarized.nvim'}
+    -- Colorbuddy
+    use {'tjdevries/colorbuddy.nvim'}
 
     use {
       "nvim-lualine/lualine.nvim",
@@ -178,6 +167,18 @@ packer.startup {
       event = "VimEnter",
       config = [[require('config.indent-blankline')]],
     }
+
+    -- Zen Mode
+    use {"folke/zen-mode.nvim"}
+
+    -- AutoPair tags
+    use {
+	    "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+      }
+
+    -- Autotag html tags
+    use {'windwp/nvim-ts-autotag'}
 
     -- notification plugin
     use {

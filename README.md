@@ -144,3 +144,14 @@ MacOS and Linux, run the following command:
 git clone --depth=1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/opt/packer.nvim
 ```
 
+### Prettier
+
+I'm also using the prettier plugin. And before we can use that, we first need to install 'prettierd'.
+
+On MacOS Run the following command:
+
+```
+brew install fsouza/prettierd/prettierd
+```
+
+

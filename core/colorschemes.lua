@@ -19,7 +19,9 @@ M.colorschemedir = {
   kanagawa = "kanagawa.nvim",
   catppuccin = "catppuccin",
   tokyonight = "tokyonight",
-  gruvbox = "gruvbox"
+  gruvbox = "gruvbox",
+  cobalt2 = "cobalt2",
+  neosolarized = "neosolarized"
 }
 
 M.gruvbox8 = function()
@@ -102,6 +104,17 @@ M.gruvbox = function()
   vim.cmd([[colorscheme gruvbox]])
 end
 
-M.gruvbox()
---vim.cmd([[colorscheme ayu]])
+M.cobalt2 = function()
+  require('colorbuddy').colorscheme('cobalt2')
+end
+
+M.neosolarized= function()
+  require("neosolarized").setup()
+  vim.cmd([[colorscheme neosolarized]])
+end
+
+
+
+--M.cobalt2()
+vim.cmd([[colorscheme ayu]])
 
