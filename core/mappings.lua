@@ -216,6 +216,7 @@ api.nvim_create_autocmd("TextYankPost", {
 -- Delete the character to the right of the cursor
 keymap.set("i", "<C-D>", "<DEL>")
 
+-- Ping cursor location
 keymap.set("n", "<leader>cb", function()
   local cnt = 0
   local blink_times = 7
