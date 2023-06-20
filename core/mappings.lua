@@ -110,7 +110,7 @@ keymap.set("n", "<leader>v", "printf('`[%s`]', getregtype()[0])", {
 keymap.set("n", "<leader>js", "<cmd>:w !node<cr>")
 
 -- Always use very magic mode for searching
-keymap.set("n", "/", [[/\v]])
+keymap.set("n", "f", [[/\v]])
 -- Search in selected region
 -- xnoremap / :<C-U>call feedkeys('/\%>'.(line("'<")-1).'l\%<'.(line("'>")+1)."l")<CR>
 
@@ -209,6 +209,16 @@ api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+
+-- LspSaga Mappings
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', opts)
+vim.keymap.set('n', 'gr', '<Cmd>Lspsaga rename<CR>', opts)
 
 -- Go to beginning of command in command-line mode
 --keymap.set("c", "<C-A>", "<HOME>")

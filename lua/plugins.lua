@@ -90,7 +90,8 @@ packer.startup {
 
   -- Game/Plugin designed to improve vim gestures and muscle memory
   use {'ThePrimeagen/vim-be-good' }
-    -- Show match number and index for searching
+
+  -- Show match number and index for searching
   use {
     "kevinhwang91/nvim-hlslens",
     branch = "main",
@@ -128,7 +129,6 @@ packer.startup {
     use { "sainnhe/everforest", opt = true }
     use {'haishanh/night-owl.vim', opt = true}
     use { "EdenEast/nightfox.nvim", as="nightfox" ,opt = true }
-    --use { "rebelot/kanagawa.nvim", as = "nightfox", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
     use {'fcpg/vim-farout', as = "farout", opt = true}
     use {'folke/tokyonight.nvim'}
@@ -138,7 +138,7 @@ packer.startup {
     use {'ayu-theme/ayu-vim', opt=true}
     use { "ellisonleao/gruvbox.nvim" }
     use {'norcalli/nvim-base16.lua'}
-    use {'svrana/neosolarized.nvim'}
+    use {'svrana/neosolarized.nvim', requires = 'tjdevries/colorbuddy.nvim' }
     -- Colorbuddy
     use {'tjdevries/colorbuddy.nvim'}
 
@@ -149,7 +149,13 @@ packer.startup {
       config = [[require('config.statusline')]],
     }
 
-   -- use { "akinsho/bufferline.nvim", event = "VimEnter",
+
+
+   -- Plugin for definitions
+   use {"glepnir/lspsaga.nvim"}
+
+
+     -- use { "akinsho/bufferline.nvim", event = "VimEnter",
    --   cond = firenvim_not_active,
    --   config = [[require('config.bufferline')]] }
 

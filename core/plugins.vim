@@ -370,12 +370,12 @@ function! s:wilder_init() abort
           \   ),
           \ ])
 
-    let l:hl = wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}])
+    let l:hl = wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#00000'}])
     call wilder#set_option('renderer', wilder#popupmenu_renderer({
           \ 'highlighter': wilder#basic_highlighter(),
           \ 'max_height': 15,
           \ 'highlights': {
-          \   'accent': l:hl,
+          \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#000000'}]),
           \ },
           \ 'left': [' ', wilder#popupmenu_devicons(),],
           \ 'right': [' ', wilder#popupmenu_scrollbar(),],
@@ -385,6 +385,7 @@ function! s:wilder_init() abort
     echohl Error |echomsg "Wilder.nvim missing: run :PackerSync to fix."|echohl None
   endtry
 endfunction
+
 
 """"""""""""""""""""""""""""""vim-auto-save settings""""""""""""""""""""""""""""""
 let g:auto_save = 1  " enable AutoSave on Vim startup

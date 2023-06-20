@@ -108,13 +108,14 @@ M.cobalt2 = function()
   require('colorbuddy').colorscheme('cobalt2')
 end
 
-M.neosolarized= function()
-  require("neosolarized").setup()
+M.neosolarized = function()
+  require("neosolarized").setup({
+    background_set = true,
+  })
   vim.cmd([[colorscheme neosolarized]])
 end
 
 
 
---M.cobalt2()
-vim.cmd([[colorscheme ayu]])
+M.neosolarized()
 

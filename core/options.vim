@@ -15,12 +15,13 @@ nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
 
 
+highlight Command guibg=darkblue guifg=white
 
 set updatetime=500  " For CursorHold events
 
 " Clipboard settings, always use clipboard for all delete, yank, change, put
 " operation, see https://stackoverflow.com/q/30691466/6064933
-if !empty(provider#clipboard#Executable()) 
+if !empty(provider#clipboard#Executable())
   set clipboard=unnamed
 "":help 'clipboar"
 endif
@@ -137,7 +138,7 @@ set completeopt+=menuone  " Show menu even if there is only one item
 set completeopt-=preview  " Disable the preview window
 
 set pumheight=10  " Maximum number of items to show in popup menu
-set pumblend=10  " pseudo transparency for completion menu
+set pumblend=0 " pseudo transparency for completion menu
 
 set winblend=0  " pseudo transparency for floating window
 
@@ -190,6 +191,3 @@ set diffopt+=internal,indent-heuristic,algorithm:histogram
 
 set nowrap  " do no wrap
 set noruler
-
-set background = "dark"
-
